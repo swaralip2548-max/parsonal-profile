@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <style>
+        /* Base Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #333333;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Sections Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            max-width: 100%;
+            padding-top: 4px;
+        }
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--light);
+            max-width: 100%;
+        }
+        .projects-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-info {
+            padding: 1.5rem;
+        }
+        .project-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        .project-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2.5rem; }
+            #hero p { font-size: 1.2rem; }
+            #about .about-content { flex-direction: column; text-align: center; }
+            .nav-links { display: none; } /* Simplified for template brevity */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">John Doe</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Hi, I'm John Doe</h1>
+        <p>Frontend Web Developer & Designer</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to my portfolio! I specialize in building clean, responsive, and user-friendly websites. I enjoy turning complex problems into simple, beautiful, and intuitive designs.</p>
+                <br>
+                <p><strong>Skills:</strong> HTML5, CSS3, JavaScript, Responsive Design, Git</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>E-Commerce Interface</h3>
+                    <p>A fully responsive product catalog page featuring interactive dynamic filters and modern styling layouts.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Weather Application</h3>
+                    <p>A web dashboard UI that displays real-time weather analytics utilizing fluid CSS grid structures.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Task Management Tool</h3>
+                    <p>A minimalist Kanban-style dashboard layout built to maximize productivity on both desktop and mobile views.</p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="border:none; cursor:pointer; width:100%;">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 John Doe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
